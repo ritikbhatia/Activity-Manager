@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <font color="white"><u><h1>Your History Of Tasks</u></h1></font>
+    <table cellpadding = "20" border = "5" align = "center" bgcolor = "#FFFFFF">
+        <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Priority</th>
+        </tr>
+        {% for display in info %}
+            <tr>
+                <td>{{display["task"]}}</td>
+                <td>{{display["status"]}}</td>
+                <td>{{display["priority"]}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td bgcolor = "#00FF00" colspan = "3"> Successes = {{successes}}</td>
+        </tr>
+        <tr>
+            <td bgcolor = "#FF0000" colspan = "3">Failures = {{failures}}</td>
+        </tr>
+
+    </table>
+{% endblock %}

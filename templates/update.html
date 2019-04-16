@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update
+{% endblock %}
+
+{% block main %}
+    <font color = "white"><h2>NOTE: Successes and Failures cannot be "updated" in history!</h2></font>
+    <br><br>
+    <form action="/update" method="post">
+        <select name = "task">
+            <option disabled selected value="">Task</option>
+                {% for task_form in tasks %}
+                    <option value="{{task_form.task}}">{{task_form.task}}</option>
+                {% endfor %}
+        </select>
+        <br><br>
+        <select name = "status">
+            <option disabled selected value="">Status</option>
+                <option value = "success">success</option>
+                <option value = "failure">failure</option>
+                <option value = "in progress">in progress</option>
+        </select>
+        <br><br>
+        <select name = "priority">
+            <option disabled selected value="">Priority</option>
+                <option value = "high">high</option>
+                <option value = "medium">medium</option>
+                <option value = "low">low</option>
+        </select>
+        <br><br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

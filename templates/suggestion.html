@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Suggestion
+{% endblock %}
+
+{% block main %}
+    <h3>These tasks need attention!</h3>
+    <br>
+    <font color="white"><h6>If table is empty, then no tasks to be attended to right now</h6></font>
+    <table border = "5" cellpadding = "20" align = "center" bgcolor = "#FFFFFF">
+        <tr>
+            <th> Task </th>
+            <th> Status </th>
+            <th> Priority </th>
+        </tr>
+        {% for i in range(counter) %}
+            <tr>
+                <td>{{task_pass[i]}}</td>
+                <td>{{status_pass[i]}}</td>
+                <td>{{priority_pass[i]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

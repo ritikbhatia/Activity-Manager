@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ Add Tasks
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+
+        <u><b><font color = "blue">Enter task:</font></b></u>
+        <br><br>
+        <div class="form-group">
+            <input autocomplete = "off" class="form-control" name="task" placeholder="Task" type="text"/>
+        </div>
+        <u><b><font color = "red">Enter Status(success/failure(if incomplete after deadline)/in progress):</font></b></u>
+        <br><br>
+        <select name = "status">
+            <option disabled selected value="">Status</option>
+                <option value = "success">success</option>
+                <option value = "failure">failure</option>
+                <option value = "in progress">in progress</option>
+        </select>
+        <br><br>
+        <u><b><font color = "yellow">Enter priority of Task(high/medium/low):</font></b></u>
+        <br><br>
+        <select name = "priority">
+            <option disabled selected value="">Priority</option>
+                <option value = "high">high</option>
+                <option value = "medium">medium</option>
+                <option value = "low">low</option>
+        </select>
+        <br><br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}
